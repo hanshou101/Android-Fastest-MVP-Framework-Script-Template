@@ -1,0 +1,75 @@
+模板触发关键字：myAll_mvp_ver_3.0
+
+模板功能描述：M、V、P、AC方法，3.0版本一键模板
+
+模板适应语言：Kotlin的全部分支
+
+模板的Template Variables内容：
+{   Name:FunName   ,   Default value : "Fun"   }
+{   Name:PojoType  ,   Default value : "MvpBlankPojo"   }
+{   Name:ApiName   }
+
+
+
+模板内容：
+
+
+        //RxModule方法
+        fun ready$FunName$(
+                  //Parameters
+            )
+            : Observable<$PojoType$> 
+            =
+            handleM({selfConnect.$ApiName$(           )},
+                    {TLog.l("")}
+            )
+    
+    
+        //Presenter方法
+        fun do$FunName$(
+               //Parameters
+            ) 
+            =
+            //专门处理 I/O 耗时操作。（网络请求、数据存储等）  
+            handleP_IO({ module.ready$FunName$(        )  },                               //从M来
+                    { resultPojo ->
+                        activity?.let { ui ->
+                        
+                        }
+                        
+                        view.after$FunName$(     resultPojo  ," I/O 正常完成"     ) 
+                     
+                     })                                                                 //到V去
+            
+            //专门处理，关于View的变换和常规操作。
+            handleP_AnyView_Here(
+                {
+                    activity?.let { ui ->
+                    //这里书写你的逻辑。后面的发送Activity，交给模板自动去做。    
+                    }
+                } ,
+                { view.after$FunName$(   null  ,  "传递给AC的文本状态内容"    ) }        
+            )
+
+        
+    
+    
+    
+    
+        //View方法
+        fun after$FunName$(result: $PojoType$? , infoMsg : String  )
+        
+        
+        
+        
+        
+        
+        //activity方法
+        override fun after$FunName$(result: $PojoType$? , infoMsg : String) = let { TLog.l("说明词") }
+        
+        
+        
+        
+        
+        
+        

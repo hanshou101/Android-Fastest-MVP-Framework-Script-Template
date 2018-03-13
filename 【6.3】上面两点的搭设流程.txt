@@ -1,0 +1,79 @@
+1.
+1.
+1.
+1.
+1.
+1.
+1.
+
+【（MVP快速一键模板）MVP----------MVP.zip】
+
+使用方式说明：
+
+1.解压到  "你的Android_Studio\plugins\android\lib\templates\activities"  之下。
+
+2.进入Android Studio，左键选中你建立好的mvp的包名，File - New - One Key - Mvp modules   （建立为这个操作，添加快捷键。比如 Ctrl + Shift + Alt + Enter ）
+
+3.在弹出的面板中
+Mvp Package name ，不用管，用已有的默认值就好
+Mvp Prefix Name ， 你想要的Activity的名字  （注意，不要带后面的Activity后缀，比如你需要BaseActivity，这里就填Base就好。）
+Activity Layout Name ， 这里，等 Mvp Prefix Name 填完后，你会发现已经生成了  类似 activity_base.xml 的名字，我们这里，切记删除掉 "activity_"。（不然最终生成的xml，会有两个重复的  "activity_activity_"）
+
+4.
+按Finish。
+
+5.
+此时，M、V、P都已生成，而新生成的  xml资源文件，在  "res-teeeeeeeeeeeeeeeeeeeeeemp-mvp-modules\layout"  目录下面，你可以考虑把  xml资源文件剪切出来，放在一个分包文件夹里。
+
+
+
+
+2.
+2.
+2.
+2.
+2.
+2.
+
+【MVP内部四重方法，一键生成模板.txt】
+
+使用方式说明：
+
+1.按照文档说明，加入Android Studio  的  Live Template  。
+
+2.在MVP的Presenter中，按照说明注释，进行调用。
+
+
+
+
+3.
+3.
+3.
+3.
+3.
+3.
+【建立一个新页面的完整步骤】
+
+1.在你要建立的mvp的package上，用模板生成mvp一整套模板。
+
+（然后可以考虑绘制xml界面？或不绘制也可以？）
+
+2.在API.kt接口里面，写网络接口。
+
+3.然后，你会发现，中途需要把服务器返回，构建一个Bean（Pojo）类（用GsonFormat），然后才能完成网络接口的书写。
+
+（此时，网络接口和Pojo类，都已写好）
+
+4.在Presenter中生成方法，如果该方法需要网络请求，则在标注RxModule的方法里，填入  Pojo类作为泛型，填入网络接口的api名称。
+
+5.将P的方法给P（网络、本地，二选一），将M的方法给M，将V的方法给V，将AC（Activity）的方法给AC。
+
+
+
+
+
+
+
+
+
+

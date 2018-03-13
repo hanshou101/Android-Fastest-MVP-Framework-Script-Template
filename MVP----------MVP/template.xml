@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="Mvp modules"
+    minApi="7"
+    minBuildApi="14"
+    description="Mvp OneKey Generate">
+
+    <category value="One Key" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="packageName"
+        name="Mvp Package name"
+        type="string"
+        constraints="package"
+        default="com.myart.kotlin.mvp" />
+
+
+    <parameter
+        id="mvpName"
+        name="Mvp Prefix Name"
+        type="string"
+        constraints="unique|nonempty"
+        suggest="SuperMan"
+        help="Qing Ba Mo Wei De0 [ Activity ] Shan Chu Diao , Xie Xie " />
+
+    <parameter
+        id="layoutName"
+        name="Activity Layout Name"
+        type="string"
+        suggest="${activityToLayout(mvpName)}"
+        constraints="layout|unique|nonempty"
+        help="Qing Ba Mo Wei De [ activity_ ] Shan Chu Diao , Xie Xie " />
+    
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_mvp_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
